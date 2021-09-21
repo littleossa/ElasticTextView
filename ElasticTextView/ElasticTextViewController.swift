@@ -9,6 +9,8 @@ import UIKit
 
 class ElasticTextViewController: UIViewController {
 
+    @IBOutlet weak private var textView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
