@@ -34,7 +34,14 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="f1F-ZS-WJB" secondAttribute="bottom" id="ecN-u6-CNk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Elastic TextView" id="4sF-nd-k7P"/>
+                    <navigationItem key="navigationItem" title="Elastic TextView" id="4sF-nd-k7P">
+                        <rightBarButtonItems>
+                            <barButtonItem image="keyboard.chevron.compact.down" catalog="system" id="Vn8-Qy-knW">
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                            </barButtonItem>
+                            <barButtonItem image="keyboard" catalog="system" id="PDI-Ih-bCf"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="textView" destination="f1F-ZS-WJB" id="vUy-6t-Z6j"/>
                     </connections>
@@ -63,11 +70,16 @@
         </scene>
     </scenes>
     <resources>
+        <image name="keyboard" catalog="system" width="128" height="79"/>
+        <image name="keyboard.chevron.compact.down" catalog="system" width="128" height="102"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
