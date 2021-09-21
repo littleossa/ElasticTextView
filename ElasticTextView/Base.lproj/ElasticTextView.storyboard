@@ -38,8 +38,15 @@
                         <rightBarButtonItems>
                             <barButtonItem image="keyboard.chevron.compact.down" catalog="system" id="Vn8-Qy-knW">
                                 <color key="tintColor" systemColor="systemRedColor"/>
+                                <connections>
+                                    <action selector="closeKeyboardButtonTapped" destination="BYZ-38-t0r" id="UHJ-52-xe2"/>
+                                </connections>
                             </barButtonItem>
-                            <barButtonItem image="keyboard" catalog="system" id="PDI-Ih-bCf"/>
+                            <barButtonItem image="keyboard" catalog="system" id="PDI-Ih-bCf">
+                                <connections>
+                                    <action selector="openKeyboardButtonTapped" destination="BYZ-38-t0r" id="IpD-pi-vqW"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>

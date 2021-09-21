@@ -15,5 +15,13 @@ class ElasticTextViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction private func openKeyboardButtonTapped() {
+        
+    }
+    
+    @IBAction private func closeKeyboardButtonTapped() {
+        
+    }
 }
 
