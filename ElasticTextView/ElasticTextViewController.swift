@@ -10,6 +10,7 @@ import UIKit
 class ElasticTextViewController: UIViewController {
 
     @IBOutlet weak private var textView: UITextView!
+    @IBOutlet weak private var textViewButtonConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()

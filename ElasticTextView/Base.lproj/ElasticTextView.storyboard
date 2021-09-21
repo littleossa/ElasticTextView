@@ -51,6 +51,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="textView" destination="f1F-ZS-WJB" id="vUy-6t-Z6j"/>
+                        <outlet property="textViewButtonConstraint" destination="ecN-u6-CNk" id="u4v-MT-0XQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
