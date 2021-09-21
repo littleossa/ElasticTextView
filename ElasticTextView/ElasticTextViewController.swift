@@ -16,6 +16,7 @@ class ElasticTextViewController: UIViewController {
         super.viewDidLoad()
         textView.becomeFirstResponder()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     @IBAction private func openKeyboardButtonTapped() {
@@ -27,6 +28,10 @@ class ElasticTextViewController: UIViewController {
     }
     
     @objc private func keyboardWillShow(_ notification: Notification) {
+        
+    }
+    
+    @objc private func keyboardWillHide(_ notification: Notification) {
         
     }
 }
