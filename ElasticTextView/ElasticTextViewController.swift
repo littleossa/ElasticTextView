@@ -47,5 +47,14 @@ class ElasticTextViewController: UIViewController {
     }
     
     @objc private func keyboardWillHide(_ notification: Notification) {
+        guard let keyboardAnimationDuration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval,
+        let KeyboardAnimationCurve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt
+        else { return }
+        
+        UIView.animate(withDuration: keyboardAnimationDuration,
+                       delay: 0,
+                       options: UIView.AnimationOptions(rawValue: KeyboardAnimationCurve)) {
+            self.textViewButtonConstraint.constant = 0
+        }
     }
 }
