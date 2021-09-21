@@ -21,7 +21,7 @@ class ElasticTextViewController: UIViewController {
     }
     
     @IBAction private func closeKeyboardButtonTapped() {
-        
+        textView.resignFirstResponder()
     }
 }
 
