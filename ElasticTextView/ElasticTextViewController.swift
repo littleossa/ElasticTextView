@@ -10,7 +10,7 @@ import UIKit
 class ElasticTextViewController: UIViewController {
 
     @IBOutlet weak private var textView: UITextView!
-    @IBOutlet weak private var textViewButtonConstraint: NSLayoutConstraint!
+    @IBOutlet weak private var textViewBottomConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +51,7 @@ extension ElasticTextViewController {
         UIView.animate(withDuration: keyboardAnimationDuration,
                        delay: 0,
                        options: UIView.AnimationOptions(rawValue: KeyboardAnimationCurve)) {
-            self.textViewButtonConstraint.constant = keyboardHeight
+            self.textViewBottomConstraint.constant = keyboardHeight
         }
     }
 }
