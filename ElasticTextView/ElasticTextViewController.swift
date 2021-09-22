@@ -34,9 +34,10 @@ class ElasticTextViewController: UIViewController {
     }
     
     @objc private func keyboardWillShow(_ notification: Notification) {
-        guard let keyboardHeight = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height,
-        let keyboardAnimationDuration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval,
-        let KeyboardAnimationCurve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt
+        
+        guard let keyboardHeight = notification.keyboardHeight,
+              let keyboardAnimationDuration = notification.keybaordAnimationDuration,
+              let KeyboardAnimationCurve = notification.keyboardAnimationCurve
         else { return }
         
         UIView.animate(withDuration: keyboardAnimationDuration,
@@ -47,8 +48,8 @@ class ElasticTextViewController: UIViewController {
     }
     
     @objc private func keyboardWillHide(_ notification: Notification) {
-        guard let keyboardAnimationDuration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval,
-        let KeyboardAnimationCurve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt
+        guard let keyboardAnimationDuration = notification.keybaordAnimationDuration,
+              let KeyboardAnimationCurve = notification.keyboardAnimationCurve
         else { return }
         
         UIView.animate(withDuration: keyboardAnimationDuration,
