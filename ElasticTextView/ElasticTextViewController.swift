@@ -29,8 +29,21 @@ class ElasticTextViewController: UIViewController {
     }
     
     @objc private func keyboardWillShow(_ notification: Notification) {
+        animateTextViewHeight(byKeyboardNotification: notification, willShowKeyboard: true)
+    }
+    
+    @objc private func keyboardWillHide(_ notification: Notification) {
+        animateTextViewHeight(byKeyboardNotification: notification, willShowKeyboard: false)
+    }
+}
+
+// MARK: - Helper Method
+extension ElasticTextViewController {
+    
+    private func animateTextViewHeight(byKeyboardNotification notification: Notification,
+                                       willShowKeyboard: Bool) {
         
-        guard let keyboardHeight = notification.keyboardHeight,
+        guard let keyboardHeight = willShowKeyboard ? notification.keyboardHeight : 0,
               let keyboardAnimationDuration = notification.keybaordAnimationDuration,
               let KeyboardAnimationCurve = notification.keyboardAnimationCurve
         else { return }
@@ -39,18 +52,6 @@ class ElasticTextViewController: UIViewController {
                        delay: 0,
                        options: UIView.AnimationOptions(rawValue: KeyboardAnimationCurve)) {
             self.textViewButtonConstraint.constant = keyboardHeight
-        }
-    }
-    
-    @objc private func keyboardWillHide(_ notification: Notification) {
-        guard let keyboardAnimationDuration = notification.keybaordAnimationDuration,
-              let KeyboardAnimationCurve = notification.keyboardAnimationCurve
-        else { return }
-        
-        UIView.animate(withDuration: keyboardAnimationDuration,
-                       delay: 0,
-                       options: UIView.AnimationOptions(rawValue: KeyboardAnimationCurve)) {
-            self.textViewButtonConstraint.constant = 0
         }
     }
 }
