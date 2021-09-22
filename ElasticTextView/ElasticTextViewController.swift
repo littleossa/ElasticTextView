@@ -43,15 +43,17 @@ extension ElasticTextViewController {
     private func animateTextViewHeight(byKeyboardNotification notification: Notification,
                                        willShowKeyboard: Bool) {
         
-        guard let keyboardHeight = willShowKeyboard ? notification.keyboardHeight : 0,
+        guard let keyboardHeight = notification.keyboardHeight,
               let keyboardAnimationDuration = notification.keybaordAnimationDuration,
               let KeyboardAnimationCurve = notification.keyboardAnimationCurve
         else { return }
         
+        let bottomConstant = willShowKeyboard ? keyboardHeight - view.safeAreaInsets.bottom : 0
+        
         UIView.animate(withDuration: keyboardAnimationDuration,
                        delay: 0,
                        options: UIView.AnimationOptions(rawValue: KeyboardAnimationCurve)) {
-            self.textViewBottomConstraint.constant = keyboardHeight
+            self.textViewBottomConstraint.constant = bottomConstant
         }
     }
 }
