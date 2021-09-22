@@ -24,10 +24,6 @@ class ElasticTextViewController: UIViewController {
                                                object: nil)
     }
     
-    @IBAction private func openKeyboardButtonTapped() {
-        textView.becomeFirstResponder()
-    }
-    
     @IBAction private func closeKeyboardButtonTapped() {
         textView.resignFirstResponder()
     }
